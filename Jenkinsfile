@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    node {
+      label 'slave'
+    }
+
+  }
   stages {
     stage('Build') {
       steps {
@@ -7,8 +12,5 @@ pipeline {
       }
     }
 
-  }
-  environment {
-    jenkins = 'slave'
   }
 }
